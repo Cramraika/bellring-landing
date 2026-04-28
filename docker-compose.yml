@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      # Coolify env-var refs (set in Coolify UI):
+      - NEXT_PUBLIC_BELLRING_SERVER_URL=${NEXT_PUBLIC_BELLRING_SERVER_URL}
+      - NEXT_PUBLIC_GA_ID=${NEXT_PUBLIC_GA_ID}
+    ports:
+      - "3000:3000"
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    labels:
+      - "coolify.managed=true"

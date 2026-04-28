@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* shadcn baseColor: neutral, style: new-york (per host_page).
+   4-token brand swap-points: --color-primary / --color-secondary / --color-accent / --color-brand.
+   Bellring brand: bell-gold celebratory palette. */
+
+:root {
+  --background: hsl(248, 50%, 99%);
+  --foreground: hsl(240, 10%, 4%);
+  --muted: hsl(240, 4%, 96%);
+  --muted-foreground: hsl(240, 5%, 35%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(240, 10%, 4%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(240, 10%, 4%);
+  --border: hsl(240, 6%, 90%);
+  --input: hsl(240, 6%, 90%);
+  --ring: hsl(240, 5%, 65%);
+  --radius: 1rem;
+
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+
+  /* Brand swap-points (Bellring) */
+  --color-primary: #FFD24A;        /* bell-gold */
+  --color-secondary: #F59E0B;      /* bell-orange */
+  --color-accent: #3B82F6;         /* teammate-blue */
+  --color-brand: #FFB347;          /* bell-bronze */
+
+  --primary-foreground: hsl(240, 10%, 4%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --brand-foreground: hsl(240, 10%, 4%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 4%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 4%, 16%);
+  --muted-foreground: hsl(240, 5%, 65%);
+  --popover: hsl(240, 10%, 4%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 4%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 4%, 16%);
+  --input: hsl(240, 4%, 16%);
+  --ring: hsl(240, 5%, 84%);
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+}

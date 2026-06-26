@@ -1,3 +1,7 @@
+# Thin caller -> Cramraika/.github reusable Node CI.
+# Migrated to the fleet reusable-workflow library (2026-06-26). The reusable
+# workflow runs lint + typecheck (if scripts present) + build + test, so this
+# Next.js repo's lint/typecheck/build gates are preserved. Trigger is repo-specific.
 name: CI
 
 on:
@@ -6,9 +10,7 @@ on:
     paths-ignore: ["*.md", "docs/**", ".claude/**"]
   pull_request:
     branches: [main]
-
-permissions:
-  contents: read
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -16,39 +18,8 @@ concurrency:
 
 jobs:
   ci:
-    name: Lint + Typecheck + Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: "npm"
-
-      - name: Install dependencies
-        run: npm ci --no-audit --prefer-offline || npm install --no-audit
-
-      - name: Lint
-        id: lint
-        run: npm run lint
-
-      - name: Typecheck
-        id: typecheck
-        run: npm run typecheck
-
-      - name: Build
-        id: build
-        run: npm run build
-
-      - name: Summary
-        if: always()
-        run: |
-          echo "## CI Results" >> $GITHUB_STEP_SUMMARY
-          echo "| Check | Status |" >> $GITHUB_STEP_SUMMARY
-          echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Lint | ${{ steps.lint.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Typecheck | ${{ steps.typecheck.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Build | ${{ steps.build.outcome }} |" >> $GITHUB_STEP_SUMMARY
+    uses: Cramraika/.github/.github/workflows/ci-node.yml@main
+    with:
+      runner: ${{ vars.RUNNER_TYPE || 'ubuntu-latest' }}
+      node-version: "22"
+    secrets: inherit

@@ -17,7 +17,7 @@ Inherits the full Kinetic Observatory component library from `host_page/docs/des
 Animated hero centered on a bell SVG. On load + on configurable interval, the bell rings (rotation oscillation + sound-wave ripple in `--color-primary` bell-gold). Replaces `<OrbitHero />` for the landing page hero. Reduced-motion fallback: static bell + opacity pulse.
 
 ### `<TierCard />`
-Pricing card variant for the 3-tier table ($19/$79/$299). Glass-surface base from `<FeatureTile />` + tier-distinguishing `--color-brand` accent on the recommended tier (Team @ $79). Includes feature checklist, primary CTA, optional "Most Popular" eyebrow.
+Pricing card variant for the 4-tier table (Free / $19 Team / $79 Growth / $299+ Enterprise). Glass-surface base from `<FeatureTile />` + tier-distinguishing `--color-brand` accent on the recommended tier (Growth @ $79). Includes feature checklist, primary CTA, optional "Most Popular" eyebrow.
 
 ## Stack
 

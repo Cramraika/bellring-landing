@@ -7,7 +7,7 @@ Tier B per `~/.claude/conventions/design-system.md §2` — token-swap fork of t
 Forked from `~/Documents/Github/host_page/docs/design/` 2026-04-28 by PCN Session 11B.
 
 **What's inherited (do NOT modify):**
-- Typography scale (Manrope display + Inter body + JetBrains Mono dials) — see host_page `typography.md`
+- Typography scale (DM Sans display + Inter body + JetBrains Mono dials) — see host_page `typography.md`
 - Component philosophy (`<OrbitHero />`, `<Gauge />`, `<Dial />`, `<FeatureTile />`, `<EyebrowLabel />`, `<KineticCTA />`) — see host_page `components.md`
 - shadcn posture (baseColor: neutral, style: new-york, cssVariables: true)
 - Surface family (`ko-surface-*`), semantic status (`ko-healthy/warning/error/unknown`)

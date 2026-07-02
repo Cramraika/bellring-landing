@@ -40,7 +40,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ["Manrope", "Inter", "system-ui", "sans-serif"],
+        display: ["DM Sans", "Inter", "system-ui", "sans-serif"],
         body: ["Inter", "system-ui", "sans-serif"],
         mono: ["JetBrains Mono", "ui-monospace", "monospace"],
       },

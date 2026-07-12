@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   ci:
-    uses: Cramraika/.github/.github/workflows/ci-node.yml@8d85e1021b82757cd4083ab8dbc5e75bac703312 # main
+    uses: Cramraika/.github/.github/workflows/ci-node.yml@8995e871ae59a8cd7977d0f7b1abd022705431b5 # main
     with:
       runner: ${{ vars.RUNNER_TYPE || 'ubuntu-latest' }}
       node-version: "22"

@@ -4,7 +4,7 @@
 // that is what has been failing every pull request in this repo rather than any code problem.
 //
 // Running eslint directly, against a config that exists, removes the wizard from the path entirely.
-import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals.js";
 
 export default [
   ...nextCoreWebVitals,
